@@ -4,18 +4,19 @@ import { EnvConfig } from "../../env.config"
 type HttpMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH"
 
 interface IOptions {
-  method: HttpMethod
-  complement: string
+  method?: HttpMethod
+  complement?: string
+  access_token?: string
 }
 
-export const helperHttp = async ({ complement, method }: IOptions) => {
-  const { url_api, client_id, client_secret, email, password } = EnvConfig()
+export const helperHttp = async ({
+  complement,
+  method,
+  access_token: token,
+}: IOptions) => {
   const access_token = await getToken()
-  console.log(
-    access_token.access_token,
-    "------------",
-    new Date().toISOString()
-  )
+
+  const { url_api, client_id, client_secret, email, password } = EnvConfig()
 
   const data = {
     email,
@@ -28,9 +29,10 @@ export const helperHttp = async ({ complement, method }: IOptions) => {
     method,
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${access_token.access_token}`,
+      Authorization: `Bearer ${token ? token : access_token}`,
     },
   }
+
   if (method !== "GET") {
     options.body = JSON.stringify(data)
   }
