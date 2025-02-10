@@ -1,12 +1,12 @@
 "use server"
 
-import { Tributos } from "@/interfaces/tributos"
+import { UnidadesMedida } from "@/interfaces/medidas"
 import { helperHttp } from "@/services/helper"
 
-export async function getTributesProducts() {
+export async function getMeasurementUnits() {
   try {
     const response = await helperHttp({
-      complement: "/v1/tributes/products",
+      complement: "/v1/measurement-units",
       method: "GET",
     })
 
@@ -16,10 +16,9 @@ export async function getTributesProducts() {
         `Error ${response.status}: ${errorData.message || "Unknown error"}`
       )
     }
-
     const data = await response.json()
 
-    return data as Tributos
+    return data as UnidadesMedida
   } catch (error) {
     console.error("Error fetching data:", error)
     throw new Error("Error fetching data")

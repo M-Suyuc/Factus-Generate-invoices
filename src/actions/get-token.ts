@@ -4,10 +4,6 @@ import { cache } from "react"
 import { EnvConfig } from "../../env.config"
 
 const getCachedToken = cache(async () => {
-  // export async function getToken() {
-  // console.log("Fetching data at:", new Date().toISOString())
-  console.log("Token obtenido en:", new Date().toISOString())
-
   try {
     const { url_api, client_id, client_secret, email, password } = EnvConfig()
 
@@ -20,7 +16,7 @@ const getCachedToken = cache(async () => {
 
     const response = await fetch(`${url_api}/oauth/token`, {
       next: {
-        revalidate: 3000, // Cada 59 minutos
+        revalidate: 3500,
       },
       method: "POST",
       headers: {
@@ -37,12 +33,6 @@ const getCachedToken = cache(async () => {
     }
     const data = await response.json()
 
-    // console.log("Data fetched at:", new Date().toISOString())
-    console.log(
-      "Token expira en:",
-      new Date(Date.now() + 3600 * 1000).toISOString()
-    )
-
     return data
   } catch (error) {
     console.error("Error fetching data:", error)
@@ -51,5 +41,6 @@ const getCachedToken = cache(async () => {
 })
 
 export async function getToken() {
-  return getCachedToken()
+  const { access_token } = await getCachedToken()
+  return access_token
 }
