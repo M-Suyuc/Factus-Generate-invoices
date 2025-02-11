@@ -198,14 +198,13 @@ export const CreateInvoicePage: React.FC<InvoiceFormProps> = ({
       }
 
       setIsLoading(true)
-      const res = await validateInvoice(data)
-      console.log({ res })
-      router.refresh()
+      await validateInvoice(data)
       toast({
         title: "Invoice created",
         description: "Your invoice has been successfully created.",
       })
-      // router.push("/dashboard/invoices")
+      router.refresh()
+      router.push("/dashboard/invoices")
     } catch (error) {
       if (error instanceof Error) {
         toast({
