@@ -48,7 +48,7 @@ export default async function InvoicesPage() {
               <TableCell>{invoice.email}</TableCell>
               <TableCell>{invoice.number}</TableCell>
               <TableCell>{invoice.reference_code}</TableCell>
-              <TableCell>{invoice.total}</TableCell>
+              <TableCell>$ {invoice.total}</TableCell>
               <DownloadPDF pdfNumber={invoice.number} />
               <TableCell
                 className={clsx(
