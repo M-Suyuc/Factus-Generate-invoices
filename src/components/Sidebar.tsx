@@ -6,8 +6,8 @@ import Image from "next/image"
 
 export function Sidebar() {
   return (
-    <div className="w-64 bg-background h-full border-r border-border">
-      <div className="p-6">
+    <div className="w-64 bg-background overflow-hidden h-full relative border-r border-border">
+      <div className="p-6 h-full">
         <Link href="/dashboard">
           <Image
             src="/logo.png"
@@ -46,6 +46,19 @@ export function Sidebar() {
           </ul>
         </nav>
       </div>
+      <footer className="absolute bottom-4  text-center w-full text-lg text-foreground">
+        Built by
+        <span className="font-bold text-xl text-indigo-600">
+          <Link href="https://github.com/M-suyuc" target="_blank">
+            {" "}
+            Marlon{" "}
+          </Link>
+        </span>
+        Using
+        <span className="text-indigo-400"> Nextjs </span>
+        and
+        <span className="text-indigo-400"> TailwindCSS </span>
+      </footer>
     </div>
   )
 }
