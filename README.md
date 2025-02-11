@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Factus
 
-## Getting Started
+Factus es una aplicación para la creación de facturas.
 
-First, run the development server:
+## Características
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Creación y envío de facturas
+- Reportes de ventas
+
+## Requisitos
+
+- Node.js >= 20.x
+- npm >= 10.9.x
+
+## Instalación
+
+1. Clonar el repositorio:
+
+```sh
+git clone https://github.com/usuario/factus.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Navegar al directorio del proyecto:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+cd factus
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Crea una copia de el .env.template, y renombrarlo a .env
+4. Reemplazar las variables de entorno
+5. Instalar las dependencias:`npm install`
 
-## Learn More
+## Uso
 
-To learn more about Next.js, take a look at the following resources:
+Para iniciar la aplicación en modo desarrollo, ejecuta:jecutar el comando de `npm run dev`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+La aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contribuir
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Haz un fork del proyecto
+2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`)
+3. Realiza tus cambios y haz commit (`git commit -am 'Añadir nueva funcionalidad'`)
+4. Sube tus cambios (`git push origin feature/nueva-funcionalidad`)
+5. Abre un Pull Request
