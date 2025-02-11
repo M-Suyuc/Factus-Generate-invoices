@@ -2,8 +2,6 @@ import { getInvoices } from "@/actions/get-invoices"
 import { getToken } from "@/actions/get-token"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-export const dynamic = "force-dynamic"
-
 export default async function DashboardPage() {
   try {
     const access_token = await getToken()
@@ -13,7 +11,9 @@ export default async function DashboardPage() {
     const pendiente = invoices
       .map((item) => item.status)
       .filter((item) => item === 0).length
+
     const total = pagination.total
+
     const TotalRevenue = invoices.reduce(
       (prev, actual) => (prev += +actual.total),
       0

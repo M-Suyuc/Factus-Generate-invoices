@@ -1,15 +1,3 @@
-// export const dynamic = "force-dynamic"
-export const revalidate = 60
-// Opción	Ventajas	Desventajas	¿Cuándo usar?
-
-// force-dynamic	Siempre obtiene datos frescos y correctos.
-// 	Puede aumentar la carga del servidor y hacer más lenta la página.
-// Cuando los datos cambian constantemente o dependen del usuario autenticado.
-
-// revalidate = X	Reduce la carga del servidor y mejora rendimiento.
-// 	Los datos pueden estar desactualizados por unos segundos/minutos.
-// 	Cuando los datos no cambian cada segundo y está bien actualizarlos cada X tiempo.
-
 import Link from "next/link"
 import { PlusCircle } from "lucide-react"
 
