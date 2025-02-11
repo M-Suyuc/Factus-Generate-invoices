@@ -28,11 +28,19 @@ cd factus
 
 3. Crea una copia de el .env.template, y renombrarlo a .env
 4. Reemplazar las variables de entorno
-5. Instalar las dependencias:`npm install`
+5. Instalar las dependencias:
+
+```sh
+npm install
+```
 
 ## Uso
 
-Para iniciar la aplicación en modo desarrollo, ejecuta:jecutar el comando de `npm run dev`
+Para iniciar la aplicación en modo desarrollo, ejecuta:jecutar el comando de
+
+```sh
+npm run dev
+```
 
 La aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
 
