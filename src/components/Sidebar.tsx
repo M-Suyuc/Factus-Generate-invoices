@@ -1,8 +1,8 @@
-import Link from "next/link"
-import { FileText, Home, PlusCircle } from "lucide-react"
+import Link from "next/link";
+import { FileText, Home, PlusCircle } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function Sidebar() {
   return (
@@ -49,7 +49,7 @@ export function Sidebar() {
       <footer className="absolute bottom-4  text-center w-full text-lg text-foreground">
         Built by
         <span className="font-bold text-xl text-indigo-600">
-          <Link href="https://github.com/M-suyuc" target="_blank">
+          <Link href="https://marlon-suyuc.vercel.app" target="_blank">
             {" "}
             Marlon{" "}
           </Link>
@@ -60,5 +60,5 @@ export function Sidebar() {
         <span className="text-indigo-400"> TailwindCSS </span>
       </footer>
     </div>
-  )
+  );
 }
